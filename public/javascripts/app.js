@@ -38,7 +38,7 @@ angular.module('MainApp', [])
                     return;
                 }
                 $http({
-                    url: "/scores/?n=" + $scope.name,
+                    url: "/scores/?id=" + $scope.id,
                     method: "GET"
                 }).then(function successCallback(response) {
                     console.log(response);

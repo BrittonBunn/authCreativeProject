@@ -93,7 +93,7 @@ router.get('/scores', function(req, res, next) {
     console.log(players);
 
     for (var i = 0; i < players.length; i++) {
-        if (players[i].name === req.query.n) {
+        if (players[i].id === req.query.id) {
             players[i].date = new Date();
         }
     }
