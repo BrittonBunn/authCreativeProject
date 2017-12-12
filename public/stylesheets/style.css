@@ -1,0 +1,113 @@
+body {
+    background-image: url(https://www.artsfon.com/pic/201503/1920x1080/artsfon.com-67934.jpg);
+}
+
+
+.answerButton {
+    -moz-box-shadow: 4px 4px 6px 2px #8a2a21;
+    -webkit-box-shadow: 4px 4px 6px 2px #8a2a21;
+    box-shadow: 4px 4px 6px 2px #8a2a21;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24437));
+    background:-moz-linear-gradient(top, #c62d1f 5%, #f24437 100%);
+    background:-webkit-linear-gradient(top, #c62d1f 5%, #f24437 100%);
+    background:-o-linear-gradient(top, #c62d1f 5%, #f24437 100%);
+    background:-ms-linear-gradient(top, #c62d1f 5%, #f24437 100%);
+    background:linear-gradient(to bottom, #c62d1f 5%, #f24437 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#f24437',GradientType=0);
+    background-color:#c62d1f;
+    -moz-border-radius:41px;
+    -webkit-border-radius:41px;
+    border-radius:41px;
+    border:5px solid #d02718;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:20px;
+    font-weight:bold;
+    padding:10px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #810e05;
+    width:100%;
+    margin-bottom: 5px;
+}
+.answerButton:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f24437), color-stop(1, #c62d1f));
+    background:-moz-linear-gradient(top, #f24437 5%, #c62d1f 100%);
+    background:-webkit-linear-gradient(top, #f24437 5%, #c62d1f 100%);
+    background:-o-linear-gradient(top, #f24437 5%, #c62d1f 100%);
+    background:-ms-linear-gradient(top, #f24437 5%, #c62d1f 100%);
+    background:linear-gradient(to bottom, #f24437 5%, #c62d1f 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24437', endColorstr='#c62d1f',GradientType=0);
+    background-color:#f24437;
+}
+.answerButton:active {
+    position:relative;
+    top:1px;
+}
+
+.card-block {
+    padding: 5%;
+    background-color: darkgrey;
+}
+
+.card-header {
+    font-size: 60px;
+    font-weight: bolder;
+    font-family: "URW Gothic L";
+    background-color: royalblue;
+}
+
+.main-card {
+    padding-top: 2%;
+    opacity: .96;
+}
+
+.card {
+    border-color: #810e05;
+}
+
+.instruction {
+    padding-top: 60px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.topInstruction {
+    padding-top: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#submit-button {
+    font-weight: bolder;
+    background-color: #f24437;
+}
+
+.list-group-item {
+    background-color: gainsboro;
+    font-weight: bolder;
+    font-size: 15px;
+}
+
+#lastAnswer {
+    font-size: 20px;
+}
+
+#leaderboard {
+    border-bottom-color: black;
+    border-bottom-width: 4px;
+}
+
+#playerName {
+    float: right;
+}
+
+.score-holder {
+    border-width: 2px;
+    border-color: black;
+}
+
+.profileImg {
+    padding-right: 10px;
+}

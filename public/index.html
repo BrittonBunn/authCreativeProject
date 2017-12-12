@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Presidential Knowledge</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+    <script src="javascripts/app.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="stylesheets/style.css" type="text/css">
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyD06JZhCghdQxvS2BkuMtFFc8Kj9L0812I",
+            authDomain: "presidentgameauth.firebaseapp.com",
+            databaseURL: "https://presidentgameauth.firebaseio.com",
+            projectId: "presidentgameauth",
+            storageBucket: "presidentgameauth.appspot.com",
+            messagingSenderId: "414988828413"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <meta name="google-signin-client_id" content="650401563435-sde0eugn6fd62ppfab920poasm2iovsm.apps.googleusercontent.com">
+    <meta name="google-signin-cookiepolicy" content="single_host_origin">
+    <meta name="google-signin-scope" content="profile email">
+
+</head>
+
+<body ng-app="MainApp">
+
+<div ng-controller="MainCtrl">
+
+    <div ng-show="nameVisible">
+
+        <div class="container main-card">
+            <div class="card text-center">
+                <div class="card-header">
+                    {{question}}
+                </div>
+                <div class="card-block">
+                    <div class="row">
+                        <div class="col-4 offset-2">
+                            <button class="answerButton" ng-disabled="buttonPressed" ng-click='submitAnswer(0)'>{{choices[0]}}</button>
+                        </div>
+                        <div class="col-4">
+                            <button class="answerButton" ng-disabled="buttonPressed" ng-click='submitAnswer(1)'>{{choices[1]}}</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 offset-2">
+                            <button class="answerButton" ng-disabled="buttonPressed" ng-click='submitAnswer(2)'>{{choices[2]}}</button>
+                        </div>
+                        <div class="col-4">
+                            <button class="answerButton" ng-disabled="buttonPressed" ng-click='submitAnswer(3)'>{{choices[3]}}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="list-group-item text-center" id="lastAnswer" ng-if="lastCorrectAnswer">
+                Last Answer By: {{lastCorrectAnswer}}
+            </div>
+            <div class="list-group-item text-center" id="leaderboard">
+                Current Leaderboard
+            </div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div ng-repeat="player in players  | orderBy:'-score'" class="list-group-item col-4 score-holder">
+                        <img ng-src="{{player.imgUrl}}" alt="*pic*" class="profileImg" height="80px"/>
+                        {{player.name}}: {{player.score}}<span id="playerName" ng-if="isPlayer(player.name)">  <a href="#" onclick="signOut();">Sign out</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div ng-show="formVisible">
+
+        <div class="container main-card">
+            <div class="card text-center">
+                <div class="card-header">
+                    Presidents Quiz
+                </div>
+                <div class="card-block">
+                    <div class="row">
+                        <div class="col-12">
+                            <p class="topInstruction">Sign in With Google</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2 offset-5">
+                             <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <p class="instruction">What years was each President in office? This is a race against other players!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+</div>
+
+
+
+</div>
+</body>
+
+</html>
