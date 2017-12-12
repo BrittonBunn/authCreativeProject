@@ -46,7 +46,7 @@ removeInactives = function() {
   var date = new Date();
 
   while (i--) {
-      if (date.getTime() - players[i].date.getTime() > 10000) {
+      if (date.getTime() - players[i].date.getTime() > 60000) {
           players.splice(i, 1);
       }
   }
